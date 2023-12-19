@@ -1,0 +1,59 @@
+---
+import CallToAction from './CallToAction.astro'
+import { Icon } from 'astro-icon'
+
+const currentYear = new Date().getFullYear()
+---
+
+<footer>
+  <CallToAction />
+  <section class="py-8">
+    <div class="container">
+      <p>
+        &copy; {currentYear} - Starter Theme for <a href="https://astro.build/">Astro</a>. Made with ❤️ by <a
+          href="https://github.com/markteekman">Mark Teekman</a
+        >.
+      </p>
+    <style>
+    .icon-container {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+    .row-container {
+      display: flex;
+      flex-direction: column;
+    }
+    </style>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <h4 class="footer-heading">About Us</h4>
+        <p>ACES is a club dedicated to exploring code, creativity, and community.</p>
+      </div>
+      <div>
+        <h4 class="footer-heading">Contact Us</h4>
+        <p>Email: aces@ioepc.edu.np</p>
+        <p>Phone: 123-456-7890</p>
+      </div>
+      <div>
+        <h4 class="footer-heading">Follow Us</h4>
+        <div class="icon-container">
+          <a href="#"><Icon pack="ion" name="logo-facebook" size= "24px"/></a>
+          <a href="#"><Icon pack="ion" name="logo-twitter" size= "24px" /></a>
+          <a href="#"><Icon pack="ion" name="logo-instagram" size= "24px" /></a>
+        </div>
+      </div>
+      <div class="row-container">
+        <h4 class="footer-heading">More Info</h4>
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Code Of Conduct</a>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <p>&copy; {currentYear} - ACES. All rights reserved.</p>
+    </div>
+    </div>
+
+  </section>
+</footer>

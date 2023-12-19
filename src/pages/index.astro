@@ -1,0 +1,78 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Hero from '../components/Hero.astro'
+import Feature from '../components/Feature.astro'
+import Counter from '../components/Counter.astro'
+import ContentMedia from '../components/ContentMedia.astro'
+---
+
+<DefaultLayout title="Home">
+  <Hero />
+    <ContentMedia imgSrc="/accessible-components.webp">
+    <h2>Welcome To ACES</h2>
+    <p class="text-2xl">
+      ACES ko guff thoknu
+      This theme provides plenty of tried and tested Accessible Astro Components. Some are native to this theme and a
+      lot of others are integrated using a <a href="https://github.com/markteekman/accessible-astro-components"
+        >separate package</a
+      >. They'll get you up and running in building an accessible solution for your visitors.
+    </p>
+  </ContentMedia>
+
+  <section class="my-64">
+    <div class="container">
+      <h2 class="mb-16 text-6xl">Upcoming Events</h2>
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <Feature icon="mdi:code-braces-box" title="Hackathon">
+          'Tis a yearly tradition where tech enthusiasts from all around fight for the glory.
+        </Feature>
+        <Feature icon="mdi:wheelchair-accessibility" title="Box 2">
+          17 components and counting, all tried and tested for the most optimal accessible experience for your visitors.
+        </Feature>
+        <Feature icon="mdi:looks" title="Box 3">
+          Less worry about formatting your code, let the Astro Prettier integration do the heavy lifting.
+        </Feature>
+        <Feature icon="mdi:eslint" title="Box 4">
+          Lint your code with strict a11y settings to ensure you stay on track with the WCAG standards.
+        </Feature>
+        <Feature icon="mdi:book-open-page-variant" title="Box 5">
+          This theme comes with a fully integrated blog, dynamic pages and SEO optimization.
+        </Feature>
+        <Feature icon="mdi:language-markdown" title="Box 6">
+          Easily use .md and .mdx pages to build your websites or use it with Netlify CMS.
+        </Feature>
+        <Feature icon="mdi:theme-light-dark" title="Box 7">
+          Fully integrated Dark mode gives your users the choice for their favorite viewing mode.
+        </Feature>
+        <Feature icon="mdi:cog" title="Box 8">
+          The theme offers some very handy utilities to help you build your website faster.
+        </Feature>
+        <Feature icon="mdi:lighthouse" title="Box 9">
+          Excellent lighthouse scores means your website will load faster and get better SEO rankings.
+        </Feature>
+        <Feature icon="mdi:language-c" title="Box 11">
+          Gedai vayo jindagi.
+        </Feature>
+      </div>
+    </div>
+  </section>
+  <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
+    <h2>WCAG 2.1 AA Compliant</h2>
+    <p class="text-2xl">
+      Using semantic HTML, landmarks, skip links, screen reader friendly content, aria-labels, keyboard accessible
+      navigation and components, clear outlines and tab indicators and the right color contrast, you're more certain of
+      reaching WCAG AA compliance.
+    </p>
+  </ContentMedia>
+  <section class="mt-64 mb-32">
+    <div class="container">
+      <h2 class="mb-16 text-6xl">Counters</h2>
+      <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
+        <Counter count="130" title="Stars" sub="On GitHub" />
+        <Counter count="17" title="Accessible" sub="Components" />
+        <Counter count="500" title="Commits" sub="Merged" />
+        <Counter count="18+" title="Months" sub="Since launch" />
+      </div>
+    </div>
+  </section>
+</DefaultLayout>
