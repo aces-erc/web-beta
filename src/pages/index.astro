@@ -21,8 +21,27 @@ import ContentMedia from '../components/ContentMedia.astro'
 
   <section class="my-64">
     <div class="container">
-      <h2 class="mb-16 text-6xl">Upcoming Events</h2>
+
+
+      <style>
+
+        .animated {
+          animation: fadeIn 2s ease-in-out;
+        }
+
+        .interactive:hover {
+          transform: scale(1.05);
+          transition: transform 0.5s ease-in-out;
+        }
+      </style>
+
+      <h2 class="mb-16 text-6xl animated">Upcoming Events</h2>
+      <div class="grid interactive">
+
+
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+
+        
         <Feature icon="mdi:code-braces-box" title="Hackathon">
           'Tis a yearly tradition where tech enthusiasts from all around fight for the glory.
         </Feature>
@@ -53,6 +72,9 @@ import ContentMedia from '../components/ContentMedia.astro'
         <Feature icon="mdi:language-c" title="Box 11">
           Gedai vayo jindagi.
         </Feature>
+      
+      
+      
       </div>
     </div>
   </section>
