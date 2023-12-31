@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 const { post } = Astro.props
 ---
 
-<DefaultLayout title={post.title} description={post.body} url={post.title}>
+<DefaultLayout title={post.title} description={post.description} url={post.title} img={post.imageUrl}>
   <div class="container">
     <div class="mt-12">
       <Breadcrumbs>
@@ -29,16 +29,17 @@ const { post } = Astro.props
         <BreadcrumbsItem currentPage={true} label={post.title} />
       </Breadcrumbs>
     </div>
+
   </div>
   <section class="my-12">
     <div class="container">
       <h1>{post.title}</h1><br />
-      <p>By userId: {post.userId}</p>
+      <p>Deadline: {post.deadline}</p>
     </div>
   </section>
   <section class="my-12">
     <div class="container">
-      <p class="text-2xl">{post.body}</p>
+      <p class="text-2xl">{post.description}</p>
     </div>
   </section>
 </DefaultLayout>
