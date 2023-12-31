@@ -7,33 +7,15 @@ import ContentMedia from '../components/ContentMedia.astro'
 ---
 
 <DefaultLayout title="Home">
-  <Hero />
+  <Hero/>
     <ContentMedia imgSrc="/accessible-components.webp">
-    <h2>Welcome To ACES</h2>
+    <div class="content-side"><h2>Welcome To ACES</h2>
     <p class="text-2xl">
-      ACES ko guff thoknu
-       <a href="https://github.com/markteekman/accessible-astro-components"
-        >separate package</a
-      >. 
-    </p>
+      On going events <a href="/events/">register</a>. </p></div>
   </ContentMedia>
 
   <section class="my-64">
     <div class="container">
-
-
-      <style>
-
-        .animated {
-          animation: fadeIn 2s ease-in-out;
-        }
-
-        .interactive:hover {
-          transform: scale(1.05);
-          transition: transform 0.5s ease-in-out;
-        }
-      </style>
-
       <h2 class="mb-16 text-6xl animated">Upcoming Events</h2>
       <div class="grid interactive">
 
@@ -71,29 +53,26 @@ import ContentMedia from '../components/ContentMedia.astro'
         <Feature icon="mdi:language-c" title="Box 11">
           Gedai vayo jindagi.
         </Feature>
-      
-      
-      
       </div>
     </div>
   </section>
-  <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
-    <h2>WCAG 2.1 AA Compliant</h2>
-    <p class="text-2xl">
-      Using semantic HTML, landmarks, skip links, screen reader friendly content, aria-labels, keyboard accessible
-      navigation and components, clear outlines and tab indicators and the right color contrast, you're more certain of
-      reaching WCAG AA compliance.
-    </p>
-  </ContentMedia>
-  <section class="mt-64 mb-32">
-    <div class="container">
-      <h2 class="mb-16 text-6xl">Counters</h2>
-      <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
-        <Counter count="130" title="Stars" sub="On GitHub" />
-        <Counter count="17" title="Accessible" sub="Components" />
-        <Counter count="500" title="Commits" sub="Merged" />
-        <Counter count="18+" title="Months" sub="Since launch" />
-      </div>
-    </div>
-  </section>
+
 </DefaultLayout>
+
+<style>
+  .animated {
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  .interactive:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s ease-in-out;
+  }
+  .content-side {
+
+    margin: -3rem;
+    align-top: 1rem;
+    padding: 1rem;
+    margin-bottom: 17rem;
+  }
+</style>

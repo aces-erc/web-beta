@@ -8,47 +8,75 @@ const currentYear = new Date().getFullYear()
 <footer>
   <CallToAction />
   <section class="py-8">
-    <div class="container">
-    <style>
-    .icon-container {
-      display: flex;
-      flex-wrap: nowrap;
-    }
-    .row-container {
-      display: flex;
-      flex-direction: column;
-    }
-    </style>
-
+  <div class="container">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div>
-        <h4 class="footer-heading">About Us</h4>
-        <p>ACES is a club dedicated to exploring code, creativity, and community.</p>
-      </div>
-      <div>
-        <h4 class="footer-heading">Contact Us</h4>
-        <p>Email: <a href="aces@ioepc.edu.np">aces@ioepc.edu.np</a></p>
-        <p>Phone: 123-456-7890</p>
-      </div>
-      <div>
-        <h4 class="footer-heading">Follow Us</h4>
-        <div class="icon-container">
-          <a href="#"><Icon pack="ion" name="logo-facebook" size= "24px"/></a>
-          <a href="#"><Icon pack="ion" name="logo-twitter" size= "24px" /></a>
-          <a href="#"><Icon pack="ion" name="logo-instagram" size= "24px" /></a>
+        <div>
+          <h4 class="footer-heading">About Us</h4>
+          <p>ACES is a club dedicated to exploring code, creativity, and community.</p>
         </div>
+        <div>
+          <h4 class="footer-heading">Contact Us</h4>
+          <p>Email: <a href="aces@ioepc.edu.np">aces@ioepc.edu.np</a></p>
+          <p>Phone: 123-456-7890</p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Follow Us</h4>
+          <div class="icon-container">
+            <a href="#"><Icon pack="ion" name="logo-facebook" size= "32px"/></a>
+            <a href="#"><Icon pack="ion" name="logo-twitter" size= "32px" /></a>
+            <a href="#"><Icon pack="ion" name="logo-instagram" size= "32px" /></a>
+          </div>
+        </div>
+        <div class="row-container">
+          <h4 class="footer-heading">More Info</h4>
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Code Of Conduct</a>
+        </div>
+        <div class="footer-copyright">
+          <p>&copy; {currentYear} - ACES. All rights reserved.</p>
       </div>
-      <div class="row-container">
-        <h4 class="footer-heading">More Info</h4>
-        <a href="#">Terms of Service</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Code Of Conduct</a>
-      </div>
     </div>
-    <div class="footer-copyright">
-      <p>&copy; {currentYear} - ACES. All rights reserved.</p>
-    </div>
-    </div>
+
+  </div>
 
   </section>
 </footer>
+
+<style lang="scss">
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--neutral-100); /* Light color for text */
+    background-color: var(--neutral-900); /* Dark color for background */
+  }
+
+  footer {
+    margin-top: auto;
+  }
+
+  .container {
+    display: flex;
+  }
+
+  .icon-container {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .icon-container a {
+    margin-right: 8px;
+    color: var(--neutral-100); /* Light color for icons */
+  }
+  .icon-container a:last-child {
+    margin-right: 0;
+  }  
+  .row-container {
+        display: flex;
+        flex-direction: column;
+  }
+  .footer-copyright {
+      display: inline-block;
+  }
+</style>
