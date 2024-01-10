@@ -1,0 +1,15 @@
+---
+// src/pages/blog/index.astro
+import { getStaticPaths, getStaticProps } from '../lib/posts';
+import BlogPostPreview from '../components/BlogPostPreview.astro';
+---
+
+<h1>Blog</h1>
+
+<ul>
+  {Astro.props.posts.map((post) => (
+    <li>
+      <BlogPostPreview post={post} />
+    </li>
+  ))}
+</ul>

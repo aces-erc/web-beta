@@ -23,15 +23,13 @@ const { page } = Astro.props
     <div class="space-content container">
       <h1>Events</h1>
       <p class="text-2xl">
-        Sabai hunauman <a href="https://jsonplaceholder.typicode.com/posts"
-          >jai hanuman ki</a
-        > raat ke 3 baje.
+        Upcoming Events for Techfest 6.0.
       </p>
     </div>
   </section>
   <section class="my-12">
     <div class="container">
-      <p class="text-sm"><em>Post {page.start + 1} through {page.end + 1} of {page.total} total posts</em></p>
+      <!-- <p class="text-sm"><em>Post {page.start + 1} through {page.end + 1} of {page.total} total posts</em></p>-->
       <ul class="my-3">
         {
           page.data.map((post) => (
@@ -42,13 +40,13 @@ const { page } = Astro.props
                 footer={'deadline:' + post.deadline}
                 img = {post.imageUrl}
               >
-                {post.description}
+              {post.description.length > 30 ? post.description.substring(0, 30) + '...' : post.description}
               </Card>
             </li>
           ))
         }
       </ul>
-      <div class="mt-12 grid place-content-center">
+      <!-- <div class="mt-12 grid place-content-center">
         <Pagination
           firstPage={page.url.prev ? '/events' : null}
           previousPage={page.url.prev ? page.url.prev : null}
@@ -57,7 +55,7 @@ const { page } = Astro.props
           currentPage={page.currentPage}
           totalPages={Math.round(page.total / page.size)}
         />
-      </div>
+      </div>-->
     </div>
   </section>
 </DefaultLayout>

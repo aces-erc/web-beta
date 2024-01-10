@@ -5,6 +5,12 @@ import Feature from '../components/Feature.astro'
 import Counter from '../components/Counter.astro'
 import ContentMedia from '../components/ContentMedia.astro'
 ---
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
 
 <DefaultLayout title="Home">
   <Hero/>
@@ -13,7 +19,12 @@ import ContentMedia from '../components/ContentMedia.astro'
     <p class="text-2xl">
       On going events <a href="/events/">register</a>. </p></div>
   </ContentMedia>
-
+<head>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
   <section class="my-64">
     <div class="container">
       <h2 class="mb-16 text-6xl animated">Upcoming Events</h2>
@@ -57,9 +68,60 @@ import ContentMedia from '../components/ContentMedia.astro'
     </div>
   </section>
 
+  <section class="testimonials">
+    <div class="main-body mt-24 mb-32 flex flex-col items-center gap-12 p-12 md:p-24">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="text-center text-3xl md:text-5xl">Testimonials</h2>
+        </div>
+        <div class="testimonials-content">
+          <div class="swiper testimonials-slider js-testimonials-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide testimonials-item">
+                <div class="info">
+                  <img src="../public/testimonials/2.jpg" alt="img">
+                  <div class="text-box">
+                    <h3 class="name">John</h3>
+                    <span class="role">web dev</span>
+                  </div>
+                </div>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt enim, optio cum suscipit expedita ipsa facilis voluptas eum aspernatur? Non quae ex esse, inventore quas alias eius tenetur velit est!</p>
+              </div>
+  
+              <div class="swiper-slide testimonials-item">
+                <div class="info">
+                  <img src="../public/testimonials/2.jpg" alt="img">
+                  <div class="text-box">
+                    <h3 class="name">John</h3>
+                    <span class="role">web dev</span>
+                  </div>
+                </div>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt enim, optio cum suscipit expedita ipsa facilis voluptas eum aspernatur? Non quae ex esse, inventore quas alias eius tenetur velit est!</p>
+              </div>
+  
+              <div class="swiper-slide testimonials-item">
+                <div class="info">
+                  <img src="../public/testimonials/3.jpg" alt="img">
+                  <div class="text-box">
+                    <h3 class="name">John</h3>
+                    <span class="role">web dev</span>
+                  </div>
+                </div>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt enim, optio cum suscipit expedita ipsa facilis voluptas eum aspernatur? Non quae ex esse, inventore quas alias eius tenetur velit est!</p>
+              </div>
+  
+            </div>
+          </div>
+          <div class="swiper-pagination js-testimonials-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </DefaultLayout>
 
-<style>
+<style lang="scss">
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
   .animated {
     animation: fadeIn 2s ease-in-out;
   }
@@ -68,11 +130,85 @@ import ContentMedia from '../components/ContentMedia.astro'
     transform: scale(1.05);
     transition: transform 0.5s ease-in-out;
   }
-  .content-side {
+  /*.content-side {
 
     margin: -3rem;
     align-top: 1rem;
     padding: 1rem;
     margin-bottom: 17rem;
+  }*/
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
+  .main-body {
+    color: var(--neutral-900);
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    background-image: linear-gradient(40deg, var(--primary-100), var(--secondary-200));
+  }
+  .container{
+    max-width: 1170px;
+    margin: auto;
+    padding: 0 15px;
+  }
+  
+/*section header*/
+  .section-header{
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .section-header .title{
+    font-size: 36px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: hsl(0, 0%, 100%);
+    line-height: 1.2;
+  }
+
+/* testimonials */
+  .testimonials{
+    padding: 100px 0;
+  }
+  .testimonials-item{
+    background-color: hsl(0, 0%, 100%);
+    padding: 30px;
+    border-radius: 30px;
+  }
+  .testimonials-item img{
+    max-width: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+    vertical-align: middle;
+  }
+.testimonials-item .info{
+  display: flex;
+  align-items: center;
+}
+.testimonials-item .name{
+    font-size: 24px;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: hsl(0, 0%, 100%);
+    line-height: 1.2;
+  }
+  .testimonials-item .role{
+    text-transform: capitalize;
+    color: hsl(0, 0%, 40%);
+  }
+  .testimonials-item p{
+    margin-top: 20px;
+    color: hsl(0, 0%, 40%);
+  }
+
+  .testimonials-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
 </style>

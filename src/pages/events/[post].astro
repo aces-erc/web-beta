@@ -1,6 +1,7 @@
 ---
 import fs from 'fs'
 import path from 'path'
+import fetch from 'node-fetch';
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
 import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
 
@@ -29,22 +30,27 @@ const { post } = Astro.props
         <BreadcrumbsItem currentPage={true} label={post.title} />
       </Breadcrumbs>
     </div>
-
   </div>
   <section class="my-12">
-    <div class="container">
-      <h1>{post.title}</h1><br />
-      <p>Deadline: {post.deadline}</p>
-    </div>
-  </section>
-  <section class="my-12">
-    <div class="container">
-      <p class="text-2xl">{post.description}</p>
+    <div class="container posts">
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <img src={post.imageUrl} alt={post.title} />
+        </div>
+        <div>
+          <h1>{post.title}</h1>
+          <p>Deadline: {post.deadline}</p>
+          <p>Information: {post.description}</p>
+          <button id="modal1-trigger" class="button" onclick="handleButtonClick()">Rule Book</button>&nbsp;
+          <button id="modal2-trigger" class="button color-secondary">Register</button>
+        </div>
+      </div>
     </div>
   </section>
 </DefaultLayout>
 
 <style lang="scss">
+
   ul {
     display: grid;
     grid-template-columns: 1fr;
@@ -58,5 +64,41 @@ const { post } = Astro.props
     @media (min-width: 950px) {
       grid-template-columns: repeat(3, 1fr);
     }
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
+  img {
+  max-width: 100%;
+  height: auto;
+}
 </style>
+
+<script>
+  async function handleButtonClick() {
+    // Fetch the JSON file
+    const response = await fetch('../../assets/events/events.json');
+
+    // Parse the JSON data
+    const data = await response.json();
+
+    // Navigate to the formUrl
+    window.location.href = data[0].formUrl;
+  }
+  export default {
+    methods: {
+      handleButtonClick() {
+        fetch('../../assets/events/events.json') // Replace with the actual path to your JSON file
+          .then(response => response.json())
+          .then(data => {
+            // Fetch the formUrl property from the first object in the array
+            const firstLink = data[0].formUrl;
+            window.location.href = firstLink; // Redirect to the fetched link
+          })
+          .catch(error => {
+            console.error('Error fetching JSON:', error);
+          });
+      }
+    }
+  }
+  </script>

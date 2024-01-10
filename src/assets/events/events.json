@@ -3,21 +3,28 @@
     "deadline": "2080/10/5",
     "id": 1,
     "title": "Nope",
-    "description": "best game no cap",
-    "imageUrl": "http://t2.gstatic.com/images?q=tbn:ANd9GcTAs9KnHUUdPSI7OBP0aYn3ZrGtcUzHQ5u4Oi9Yf1kfYL7n2iWAbjf_03t52kStB7_0tNao"
+    "description": "best game no cap. salkdjflsdkajf asldkjfsdla;kfj asl;dkfjsald;kfj sdla;kfj sladkfj sldk;fj sadl;kfj sadlf;kj sadfl;k jsafd ;lkj",
+    "imageUrl": "http://t2.gstatic.com/images?q=tbn:ANd9GcTAs9KnHUUdPSI7OBP0aYn3ZrGtcUzHQ5u4Oi9Yf1kfYL7n2iWAbjf_03t52kStB7_0tNao",
+    "formUrl": "https://www.google.com",
+    "ruleUrl": "https://www.google.com"
   },
   {
     "deadline": "2980/10/5",
     "id": 2,
     "title": "Event 1",
     "description": "lorem ipsum",
-    "imageUrl": "https://yoast.com/app/uploads/2020/12/meta_description_2400x1350.jpg"
+    "imageUrl": "https://yoast.com/app/uploads/2020/12/meta_description_2400x1350.jpg",
+    "formUrl": "https://google.com",
+    "ruleUrl": "https://google.com"
     },
   {
     "deadline": "2070/10/5",
     "id": 3,
     "title": "Event 2",
     "description": "lorem ipsum",
-    "imageUrl": "https://yoast.com/app/uploads/2020/12/meta_description_2400x1350.jpg"
+    "imageUrl": "https://yoast.com/app/uploads/2020/12/meta_description_2400x1350.jpg",
+    "formUrl": "https://google.com",
+    "ruleUrl": "https://google.com"
+
     }
 ]
