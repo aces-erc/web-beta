@@ -13,23 +13,24 @@ import { Icon } from 'astro-icon'
     <li class="menu-item">
       <a href="/events/">Events</a>
     </li>
+    <li class="menu-item">
+      <a href="https://accessible-astro.dev" title="external link" rel="external noopener noreferrer">Blog</a>
+    </li>
     <li class="menu-item has-dropdown">
-      <button aria-haspopup="true" aria-expanded="false">Events</button>
+      <button aria-haspopup="true" aria-expanded="false">About</button>
       <ul class="dropdown-menu">
         <li class="submenu-item">
-          <a href="/mdx-page/">MDX Page</a>
+          <a href="/mdx-page/">Comittee (MDX Page)</a>
         </li>
         <li class="submenu-item">
-          <a href="/markdown-page/">Markdown Page</a>
+          <a href="/markdown-page/">Gallary (Markdown Page)</a>
         </li>
         <li class="submenu-item">
           <a href="/accessible-components">Accessible Components</a>
         </li>
       </ul>
     </li>
-    <li class="menu-item">
-      <a href="https://accessible-astro.dev" title="external link" rel="external noopener noreferrer">About</a>
-    </li>
+
     <li class="menu-item type-icon">
       <a href="https://discord.gg/BAR3Mypc" title="Go to the GitHub page">
         <Icon pack="ion" name="logo-discord" />
@@ -48,7 +49,7 @@ import { Icon } from 'astro-icon'
 
       [astro-icon] {
         margin-top: -4px;
-        width: 30px;
+        width: 35px;
 
         path {
           fill: var(--action-color);
